@@ -1,26 +1,48 @@
 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-    <a class='navbar-brand' href='#'>DoubleD education</a>
-    <button
-        class='navbar-toggler'
-        type='button'
-        data-toggle='collapse'
-        data-target='#navbarSupportedContent'
-        aria-controls='navbarSupportedContent'
-        aria-expanded='false'
-        aria-label='Toggle navigation'
-    >
-        <span class='navbar-toggler-icon'></span>
-    </button>
+    <div class='container'>
+        <a class='navbar-brand' href='/'>DoubleDEducation</a>
+        <button
+            class='navbar-toggler'
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarSupportedContent'
+            aria-controls='navbarSupportedContent'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+        >
+            <span class='navbar-toggler-icon'></span>
+        </button>
 
-    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-        <ul class='navbar-nav mr-auto'>
-            <li class='nav-item active'>
-                <a class='nav-link' href='#'>Home
-                    <span class='sr-only'>(current)</span></a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='#'>Link</a>
-            </li>
-            
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul class='navbar-nav ml-auto'>
+                <li class='nav-item dropdown'>
+                    <a
+                        class='nav-link dropdown-toggle'
+                        href='#'
+                        id='navbarDropdown'
+                        role='button'
+                        data-toggle='dropdown'
+                        aria-haspopup='true'
+                        aria-expanded='false'
+                    >
+                        <img
+                            src='https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/348236450_639139317660517_2429629815366283042_n.jpg?stp=cp6_dst-jpg&_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=IaFVYqhg3wgAX_2Zj5S&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfAhi4dlDm6SKWaX2lpqkk5AtIiwI0tXFknUHEKPGt7KuQ&oe=64C5542B'
+                            alt=''
+                            class='user-avatar'
+                        />
+                        Nguyễn Đức Độ
+                    </a>
+                    <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                        <a class='dropdown-item' href='/courses/create'>Đăng khóa học</a>
+                        <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='/admin/stored/courses'>Quản lý khóa học</a>
+                        <a class='dropdown-item' href='/admin/stored/posted'>Bài viết của tôi</a>
+                        <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='#'>Đăng xuất</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
     </div>
 </nav>

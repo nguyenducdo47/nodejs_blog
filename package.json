@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "main": "src/index.js",
-    "type": "module",
     "scripts": {
         "start": "nodemon --inspect src/index.js",
         "watch": "node-sass -w src/resources/scss/ -o src/public/css/",
@@ -25,7 +24,13 @@
     "homepage": "https://github.com/nguyenducdo47/nodejs_blog#readme",
     "dependencies": {
         "express": "^4.18.2",
-        "express-handlebars": "^7.1.0"
+        "express-handlebars": "^7.1.0",
+        "method-override": "^3.0.0",
+        "mongoose": "^6.11.4",
+        "mongoose-delete": "^1.0.1",
+        "mongoose-sequence": "^5.3.1",
+        "mongoose-slug-generator": "^1.0.4",
+        "mongoose-slug-updater": "^3.3.0"
     },
     "devDependencies": {
         "morgan": "^1.10.0",

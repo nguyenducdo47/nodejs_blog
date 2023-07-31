@@ -1,6 +1,23 @@
 @import 'var';
 
-h1 {
-    color: $red-color;
-    font-size: 100px;
+.card-course-item {
+    margin-top: 16px;
 }
+
+.user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 4px;
+}
+
+button{
+    cursor: pointer;
+}
+
+.required{
+    display: inline-block;
+    color: red;
+}
+

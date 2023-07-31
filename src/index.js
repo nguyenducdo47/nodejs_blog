@@ -1,31 +1,41 @@
-import express from 'express';
-import path from 'path';
-import morgan from 'morgan';
-import { engine } from 'express-handlebars';
+const path = require('path');
+const express = require('express');
+const methodOverride = require('method-override');
+const morgan = require('morgan');
+const handlebars = require('express-handlebars');
+const route = require('./routes');
+const SortMiddleware = require('./app/middlewares/SortMiddleware');
 const app = express();
 const port = 3000;
 
-app.use(express.static('src/public'));
+const db = require('./config/db');
+
+db.connect();
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(morgan('combined'));
 
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.json());
+
+app.use(methodOverride('_method'));
+
+app.use(SortMiddleware);
+
 app.engine(
     'hbs',
-    engine({
+    handlebars.engine({
         extname: '.hbs',
+        helpers: require('./helpers/handlebars'),
     }),
 );
 app.set('view engine', 'hbs');
-app.set('views', 'src/resources/views');
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
-
-app.get('/news', (req, res) => {
-    res.render('news');
-});
+route(app);
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`App listening on port ${port}`);
 });
